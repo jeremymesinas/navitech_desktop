@@ -1,0 +1,26 @@
+h2 {
+  font-family: 'Metropolis';
+  color: #FFC211;
+  font-size: 40px;
+  /* margin-left: 50px; */
+  text-align: center;
+}
+
+#login-div {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 150px
+  }
+
+  p, label {
+    color: white;
+    font-family: 'DMSans';
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .forgot-password {
+    text-align: center;
+    margin-left: 30px;
+  }
