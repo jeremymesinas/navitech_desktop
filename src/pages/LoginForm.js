@@ -7,7 +7,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
 
 useEffect(() => {
-  document.title = 'Login to NaviTech!';
+  document.title = 'Login to NaviTech?';
 }, []
 )  
 
