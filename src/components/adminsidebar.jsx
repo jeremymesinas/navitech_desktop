@@ -14,9 +14,8 @@ const AdminSidebar = () => {
     </div>
 </div>
 
-
             <ul className="sidebar-menu">
-                <li><a href="/"><Icon className="outline" path={mdiHome} size={1} /><span>Dashboard</span></a></li>
+                <li><a href="/"><Icon className="outline" path={mdiHome} size={1}/><span>Dashboard</span></a></li>
                 <li><a href="/about"><Icon className="outline" path={mdiAccount} size={1} /><span>User Management</span></a></li>
                 <li><a href="/services"><Icon className="outline" path={mdiFileDocument} size={1} /><span>Logs</span></a></li>
                 <li><a href="/contact"><Icon className="outline" path={mdiTools} size={1} /><span>Maintenance</span></a></li>
