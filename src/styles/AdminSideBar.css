@@ -9,15 +9,15 @@
     padding-top: 20px;
     font-family: 'DMSans';
     transition: width 1s ease;
-    overflow: hidden;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 
 .sidebar:hover {
-    width: 300px;
+    width: 310px;
 }
 
 .sidebar-menu {
@@ -64,12 +64,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .sidebar:hover .user-div {
     width: 90%;
     height: 70px;
-    border-radius: 40px;
+    border-radius: 10px;
+    justify-content: flex-start;
+    padding-left: 10px;
 }
 
 .outline {
@@ -80,4 +83,23 @@
 
 .bottom {
     margin-top: auto;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: white;
+    flex-shrink: 0;
+}
+
+.user-info {
+    display: none;
+    color: white;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.sidebar:hover .user-info {
+    display: block;
 }

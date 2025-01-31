@@ -7,8 +7,13 @@ const AdminSidebar = () => {
     return (
         <div className="sidebar">
             <div className="user-div">
-                {/* Optionally, you can add some content here like a user profile icon */}
-            </div>
+    <div className="profile-pic"></div>
+    <div className="user-info">
+        <div className="user-name">Christian Jeremy D. Mesinas</div>
+        <div className="user-email">qcjdrmesinas@tip.edu.ph</div>
+    </div>
+</div>
+
 
             <ul className="sidebar-menu">
                 <li><a href="/"><Icon className="outline" path={mdiHome} size={1} /><span>Dashboard</span></a></li>

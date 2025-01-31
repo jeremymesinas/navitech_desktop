@@ -2,7 +2,6 @@ h2 {
   font-family: 'Metropolis';
   color: #FFC211;
   font-size: 40px;
-  /* margin-left: 50px; */
   text-align: center;
 }
 
@@ -10,7 +9,8 @@ h2 {
     width: 400px;
     margin: 0 auto;
     padding: 20px;
-    margin-top: 150px
+    margin-top: 150px;
+    
   }
 
   p, label {

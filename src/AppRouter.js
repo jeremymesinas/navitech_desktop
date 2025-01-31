@@ -29,6 +29,7 @@ const AppRouter = () => {
         <Route path="/verification" element={<Verification />} />
         <Route path="/" element={ <SplashScreen/>} />
         <Route path="/register" element={ <Register/>} />
+        <Route path="/adminsidebar" element={ <AdminSidebar/>} />s
       </Routes>
     </div>
   );

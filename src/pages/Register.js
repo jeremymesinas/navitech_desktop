@@ -21,43 +21,74 @@ const Register = () => {
     useEffect(() => {
       document.title = 'Register to NaviTech!';
     }, []);
-  
+
     const handleSubmit = async (e) => {
       e.preventDefault();
-  
-      // Call Supabase's signUp method to register the user
-      const { user, error: signupError } = await supabase.auth.signUp({
-        admin_id,
-        email,
-        password
-      });
-  
-      if (signupError) {
-        // Handle error (e.g., invalid email, weak password)
-        setError(signupError.message);
-        setSuccess('');
-      } else {
-        // Handle successful registration
-        setSuccess('Registration successful! Please check your email for verification.');
-        setError('');
-  
-        // Insert email and password into the 'admin' table
-        const { data, error: insertError } = await supabase
-          .from('admin') // Specify your table name
-          .insert([{ admin_id, email, password }]); // Insert email and password as a new record
-  
-        if (insertError) {
-          setError(`Error inserting data: ${insertError.message}`);
+    
+      try {
+        const response = await fetch('http://localhost:5000/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ admin_id, email, password }),
+        });
+    
+        const data = await response.json();
+    
+        if (response.ok) {
+          setSuccess(data.message);
+          setError('');
+          setTimeout(() => {
+            navigate('/login');
+          }, 2000); // Redirect after 2 seconds
+        } else {
+          setError(data.error);
           setSuccess('');
-          return;
         }
-  
-        // If insertion is successful, navigate to the login page
-        setTimeout(() => {
-          navigate('/login');
-        }, 2000); // Redirect after 2 seconds, so the user can see the success message
+      } catch (error) {
+        setError('Server error. Please try again later.');
+        setSuccess('');
       }
     };
+    
+  
+    // const handleSubmit = async (e) => {
+    //   e.preventDefault();
+  
+    //   // Call Supabase's signUp method to register the user
+    //   const { user, error: signupError } = await supabase.auth.signUp({
+    //     admin_id,
+    //     email,
+    //     password
+    //   });
+  
+    //   if (signupError) {
+    //     // Handle error (e.g., invalid email, weak password)
+    //     setError(signupError.message);
+    //     setSuccess('');
+    //   } else {
+    //     // Handle successful registration
+    //     setSuccess('Registration successful! Please check your email for verification.');
+    //     setError('');
+  
+    //     // Insert email and password into the 'admin' table
+    //     const { data, error: insertError } = await supabase
+    //       .from('admin') // Specify your table name
+    //       .insert([{ admin_id, email, password }]); // Insert email and password as a new record
+  
+    //     if (insertError) {
+    //       setError(`Error inserting data: ${insertError.message}`);
+    //       setSuccess('');
+    //       return;
+    //     }
+  
+    //     // If insertion is successful, navigate to the login page
+    //     setTimeout(() => {
+    //       navigate('/login');
+    //     }, 2000); // Redirect after 2 seconds, so the user can see the success message
+    //   }
+    // };
   
     return (
       <div id="login-div">
