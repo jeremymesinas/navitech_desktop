@@ -6,6 +6,7 @@ import './App.css';
 import SplashScreen from './components/splashscreen';
 import AdminSidebar from './components/adminsidebar';
 import Register from './pages/Register';
+import Dashboard from './pages/dashboard';
 
 const AppRouter = () => {
   const location = useLocation();
@@ -18,7 +19,7 @@ const AppRouter = () => {
       case '/verification':
         return 'verif-background';
       default:
-        return 'verif-background';
+        return;
     }
   };
 
@@ -29,7 +30,8 @@ const AppRouter = () => {
         <Route path="/verification" element={<Verification />} />
         <Route path="/" element={ <SplashScreen/>} />
         <Route path="/register" element={ <Register/>} />
-        <Route path="/adminsidebar" element={ <AdminSidebar/>} />s
+        <Route path="/adminsidebar" element={ <AdminSidebar/>} />
+        <Route path="/dashboard" element={ <Dashboard/>} />
       </Routes>
     </div>
   );

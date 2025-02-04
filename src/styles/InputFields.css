@@ -27,8 +27,8 @@
 
   .button-container {
     display: flex;
-    justify-content: center; /* Centers the button horizontally */
-    margin-top: 20px; /* Add margin if needed */
+    justify-content: center; 
+    margin-top: 20px; 
   }
 
   .fieldLabel {
